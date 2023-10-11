@@ -1,0 +1,7 @@
+.site-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - var(--navbar-height) - var(--footer-height) - 2*var(--navbar-block-margin));
+    position: relative;
+}

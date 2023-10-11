@@ -1,0 +1,146 @@
+.sudoku-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  gap: 2rem;
+}
+
+.sudoku-title {
+  letter-spacing: 0.5rem;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.sudoku-start-message {
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+}
+
+.sudoku-check-solve-container {
+  display: flex;
+  height: 36px;
+  gap: 2rem;
+  align-items: center;
+}
+
+.sudoku-check,
+.sudoku-solve {
+  font-family: inherit;
+  font-size: 1.5rem;
+  transition: all 0.2s ease-out;
+  border: 1px solid transparent;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  height: fit-content;
+  background-color: var(--primary-background-color);
+  color: var(--primary-color);
+}
+
+.sudoku-check:hover,
+.sudoku-solve:hover {
+  transform: translateY(3px);
+  color: var(--secondary-color);
+}
+
+.sudoku-check:disabled{
+  color: var(--secondary-background-color);
+  cursor:not-allowed;
+}
+
+.sudoku-check:disabled:hover{
+  transform: none;
+}
+
+
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  border: 3px solid var(--secondary-background-color);
+  height: 456px;
+  width: 456px;
+}
+
+.sudoku-board.disabled {
+  border: none;
+}
+
+.sudoku-cell {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-background-color);
+  color: var(--primary-color);
+  font-family: inherit;
+  font-size: 1.75rem;
+  font-weight: 200;
+  appearance: none;
+  text-align: center;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  animation: show-in 0.1s ease-in-out backwards;
+}
+
+@keyframes show-in {
+  0% {
+    color: var(--primary-background-color);
+    background-color: var(--primary-background-color);
+    border: none;
+  }
+  80% {
+    color: var(--secondary-background-color);
+    background-color: var(--secondary-background-color);
+  }
+  100% {
+    color: var(--primary-color);
+    background-color: var(--primary-background-color);
+  }
+}
+
+.sudoku-cell:hover {
+  background-color: #414358;
+}
+
+.sudoku-cell:disabled {
+  cursor: auto;
+  color: var(--secondary-background-color);
+  font-weight: 300;
+}
+
+.sudoku-cell:disabled:hover {
+  background-color: var(--primary-background-color);
+}
+
+.sudoku-cell:focus {
+  outline: none;
+  background-color: var(--secondary-color);
+  caret-color: transparent;
+}
+
+.sudoku-cell:nth-child(n) {
+  border-bottom: 1px solid var(--secondary-background-color);
+  border-right: 1px solid var(--secondary-background-color);
+}
+
+.sudoku-cell:nth-child(9n) {
+  border-right: none;
+}
+
+.sudoku-cell:nth-last-child(-n + 9) {
+  border-bottom: none;
+}
+
+.sudoku-cell:nth-child(9n + 3),
+.sudoku-cell:nth-child(9n + 6) {
+  border-right: 3px solid var(--secondary-background-color);
+}
+
+.sudoku-cell:nth-child(n + 19):nth-child(-n + 27),
+.sudoku-cell:nth-child(n + 46):nth-child(-n + 54) {
+  border-bottom: 3px solid var(--secondary-background-color);
+}

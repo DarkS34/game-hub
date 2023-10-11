@@ -1,0 +1,27 @@
+.site-footer {
+  height: var(--footer-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-links-container {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-link svg {
+  opacity: 0.5;
+  transition: all 0.2s ease-out;
+  width: 40px;
+}
+
+.footer-link:hover svg {
+  transform: translateY(-1px);
+  opacity: 1;
+  filter: drop-shadow(0 0 10px var(--primary-color));
+}

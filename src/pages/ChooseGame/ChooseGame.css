@@ -1,0 +1,138 @@
+.games-container {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  gap: 3rem;
+}
+
+.game-link {
+  height: 500px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  border-radius: 1rem;
+  transition: all 0.2s ease-out;
+  background-color: var(--secondary-color);
+  box-shadow: -5px 5px 0 var(--secondary-background-color);
+}
+
+.game-link:hover {
+  transform: translate(-5px, 5px);
+  box-shadow: 0 0 0 var(--secondary-background-color);
+}
+
+.game-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: 0.25rem;
+  color: var(--primary-color);
+  transition: all 0.2s ease-out;
+}
+
+.game-link:hover .game-title {
+  font-size: 1.75rem;
+}
+
+.game-icon {
+  width: 180px;
+  height: 180px;
+}
+
+/* Tik-Tak-Toe */
+
+.ttt-lines,
+.x-figure,
+.o-figure {
+  fill: none;
+  stroke-linecap: round;
+  stroke-width: 1;
+  stroke: var(--primary-color);
+  transition: all 0.2s ease-out;
+}
+
+.x-figure,
+.o-figure {
+  stroke-opacity: 0;
+}
+
+.x-figure:nth-child(7),
+.x-figure:nth-child(8),
+.x-figure:nth-child(9),
+.x-figure:nth-child(10) {
+  stroke-opacity: 1;
+}
+
+.o-figure:nth-child(1),
+.o-figure:nth-child(2) {
+  stroke-opacity: 1;
+}
+
+.game-link:hover .o-figure:nth-child(4) {
+  transition-delay: 0.1s;
+  stroke-opacity: 1;
+}
+
+.game-link:hover .x-figure:nth-child(3),
+.game-link:hover .x-figure:nth-child(4) {
+  transition-delay: 0.2s;
+  stroke-opacity: 1;
+}
+
+.game-link:hover .o-figure:nth-child(3) {
+  transition-delay: 0.3s;
+  stroke-opacity: 1;
+}
+
+.game-link:hover .x-figure:nth-child(1),
+.game-link:hover .x-figure:nth-child(2) {
+  transition-delay: 0.4s;
+  stroke-opacity: 1;
+}
+
+.game-link:hover .o-figure:nth-child(5) {
+  transition-delay: 0.5s;
+  stroke-opacity: 1;
+}
+
+/* Hangman */
+
+.hangman-structure,
+.hangman-stickman {
+  fill: none;
+  stroke: var(--primary-color);
+  stroke-width: 1px;
+  transition: all 0.2s ease-out;
+}
+
+.hangman-stickman {
+  stroke-opacity: 0;
+}
+
+.game-link:hover .hangman-stickman {
+  transition-delay: 0.1s;
+  stroke-opacity: 1;
+}
+
+/* Sudoku */
+
+.sudoku-board-inside,
+.sudoku-board-outline {
+  stroke: var(--primary-color);
+  stroke-linecap: square;
+}
+
+.sudoku-numbers {
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 200;
+  fill: var(--primary-color);
+  opacity: 0;
+  transition: all .2s ease-out;
+}
+
+.game-link:hover .sudoku-numbers{
+  opacity: 1;
+}

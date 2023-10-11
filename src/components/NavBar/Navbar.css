@@ -1,0 +1,42 @@
+.site-navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  height: var(--navbar-height);
+  margin-block: var(--navbar-block-margin);
+}
+
+.site-title-container {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  transition: all 0.2s ease-out;
+  color: var(--primary-color);
+  letter-spacing: 0.1rem;
+}
+
+.site-title-container:hover {
+  filter: drop-shadow(0 0 7px var(--secondary-background-color));
+  letter-spacing: 0.2rem;
+  transform: rotate(-1deg);
+}
+
+.site-title {
+  font-weight: 300;
+  transition: color .2s ease-in-out;
+}
+
+.site-title.pt1 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+
+.site-title.pt2 {
+  font-weight: 200;
+  font-size: 2rem;
+  color: var(--secondary-background-color);
+}
+
+.site-title-container:hover .site-title.pt2{
+    color: var(--secondary-color);
+}

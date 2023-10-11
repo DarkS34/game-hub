@@ -1,0 +1,98 @@
+.hangman-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  gap: 2rem;
+}
+
+.hangman-title {
+  letter-spacing: 0.5rem;
+  font-weight: 300;
+  font-size: 3rem;
+}
+
+.hangman-start-message,
+.tries-message,
+.outcome-message {
+  font-size: 1.5rem;
+  letter-spacing: 0.25rem;
+}
+
+.hangman-letters-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.hangman-letter {
+  border-bottom: 2px solid var(--secondary-background-color);
+  font-size: 2.25rem;
+  font-weight: 300;
+  width: 20px;
+  height: 4rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: var(--secondary-color);
+}
+
+.visible-letter {
+  border-bottom: 2px solid var(--accent-color);
+  animation: slide-in-bottom 0.2s ease-in forwards;
+}
+
+@keyframes slide-in-bottom {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.keyboard-container {
+  width: 500px;
+  height: 190px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
+
+.keyboard-key {
+  width: 45px;
+  height: 60px;
+  font-size: 1.75rem;
+  font-weight: 300;
+  font-family: inherit;
+  color: var(--primary-color);
+  background-color: var(--secondary-background-color);
+  transition: all 0.1s ease-in-out;
+  border-radius: 5px;
+}
+
+.keyboard-key:hover {
+  background-color: var(--secondary-color);
+  cursor: pointer;
+  scale: 0.95;
+}
+
+.keyboard-key:active {
+  scale: 1;
+}
+
+.keyboard-key:disabled {
+  cursor: auto;
+}
+
+.keyboard-key:disabled:hover {
+  background-color: var(--primary-background-color);
+  scale: 1;
+}
+
+.clicked-key {
+  background-color: var(--primary-background-color);
+}

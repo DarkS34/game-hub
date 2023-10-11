@@ -1,0 +1,18 @@
+export const hangmanWords = [
+  "dolphin",
+  "elephant",
+  "strawberry",
+  "guitar",
+  "sunshine",
+  "pancake",
+  "butterfly",
+  "basketball",
+  "rainbow",
+  "adventure",
+  "pineapple",
+  "universe",
+  "chocolate",
+  "elephant",
+  "waterfall",
+  "adventure",
+];

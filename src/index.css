@@ -1,0 +1,57 @@
+*{
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 500;
+
+  color: var(--primary-color);
+  
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* --primary-color:#9ed8db;
+  --secondary-color:#467599;
+  --accent-color: #d64045;
+  --primary-backgound-color:#1d3354;
+  --secondary-background-color:#e9fff9; */
+
+  /* --primary-color:#75dddd;
+  --secondary-color:#508991;
+  --accent-color: #09bc8a;
+  --primary-backgound-color:#172a3a;
+  --secondary-background-color:#508991; */
+
+  --primary-color: #edf2f4;
+  --secondary-color: #3d6aff;
+  --accent-color: #008eecd0;
+  --primary-background-color: #2e2f3f;
+  --secondary-background-color: #8d99ae;
+
+  --navbar-height: 50px;
+  --navbar-block-margin: 8px;
+  --footer-height: 50px;
+}
+
+h1,p {
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--primary-background-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button{
+  border: none;
+  padding: 0;
+}

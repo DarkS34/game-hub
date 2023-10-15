@@ -14,21 +14,9 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  /* --primary-color:#9ed8db;
-  --secondary-color:#467599;
-  --accent-color: #d64045;
-  --primary-backgound-color:#1d3354;
-  --secondary-background-color:#e9fff9; */
-
-  /* --primary-color:#75dddd;
-  --secondary-color:#508991;
-  --accent-color: #09bc8a;
-  --primary-backgound-color:#172a3a;
-  --secondary-background-color:#508991; */
-
   --primary-color: #edf2f4;
   --secondary-color: #3d6aff;
-  --accent-color: #008eecd0;
+  --auxiliary-color: #1f2d5a;
   --primary-background-color: #2e2f3f;
   --secondary-background-color: #8d99ae;
 
@@ -54,4 +42,11 @@ a {
 button{
   border: none;
   padding: 0;
+}
+
+
+@media screen and (max-width: 768px) {
+  body{
+    --navbar-block-margin: 12px;
+  }
 }

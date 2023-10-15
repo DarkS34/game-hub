@@ -1,7 +1,10 @@
 .site-main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - var(--navbar-height) - var(--footer-height) - 2*var(--navbar-block-margin));
     position: relative;
+    overflow: hidden;
+    padding-block: 2rem;
 }

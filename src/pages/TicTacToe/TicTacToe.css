@@ -92,7 +92,7 @@
 }
 
 .winner-cell-X {
-  box-shadow: inset 0 0 1.5rem var(--accent-color);
+  box-shadow: inset 0 0 1.5rem var(--secondary-color);
 }
 
 .winner-cell-O {
@@ -108,8 +108,8 @@
 
 .X-line {
   fill: none;
-  stroke: var(--accent-color);
-  filter: drop-shadow(0 0 5px var(--accent-color));
+  stroke: var(--secondary-color);
+  filter: drop-shadow(0 0 5px var(--secondary-color));
   stroke-linecap: round;
   stroke-miterlimit: 10;
   stroke-width: 4px;

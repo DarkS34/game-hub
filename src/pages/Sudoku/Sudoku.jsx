@@ -52,7 +52,7 @@ const Sudoku = () => {
   const handleCheck = () => {
     if (!sudokuBoard.every((e, i) => e === solvedSudoku[i])) {
       setOutcome(false);
-      setTimeout(() => setOutcome(null), 5000);
+      setTimeout(() => setOutcome(null), 3000);
     } else {
       setOutcome(true);
     }
@@ -63,6 +63,7 @@ const Sudoku = () => {
     document.querySelectorAll(".sudoku-cell").forEach((cell) => {
       cell.disabled = true;
     });
+    setOutcome("solved");
   };
 
   const checkFilledSudokuBoard = () => {
@@ -90,12 +91,14 @@ const Sudoku = () => {
       <StartGameButton handleClick={handleStartClick} gameStatus={isStarted} />
       {isStarted ? (
         outcome !== null ? (
-          outcome ? (
-            <p className="outcome-message">ALL CELLS ARE RIGHT, YOU WON!</p>
-          ) : (
+          outcome === "solved" ? (
+            <p className="outcome-message">THIS IS THE SOLVED SUDOKU.</p>
+          ) : !outcome ? (
             <p className="outcome-message">
               SOME OF THE CELLS ARE WRONG, TRY AGAIN!
             </p>
+          ) : (
+            <p className="outcome-message">ALL CELLS ARE RIGHT, YOU WON!</p>
           )
         ) : (
           <div className="sudoku-check-solve-container">

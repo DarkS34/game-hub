@@ -21,7 +21,7 @@
 
 .start-button:hover {
   background: var(--secondary-color);
-  box-shadow: 0 0 30px 5px var(--accent-color);
+  box-shadow: 0 0 30px 5px var(--secondary-color);
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;

@@ -82,7 +82,9 @@ const Hangman = () => {
         outcome === "v" ? (
           <p className="outcome-message">WOU WON!</p>
         ) : (
-          <p className="outcome-message">YOU LOST!</p>
+          <p className="outcome-message">
+            YOU LOST! The word was {word.join("")}
+          </p>
         )
       ) : isStarted ? (
         <p className="tries-message">

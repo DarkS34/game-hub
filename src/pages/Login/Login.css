@@ -1,0 +1,124 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  height: 350px;
+  width: 300px;
+  font-family: inherit;
+  background: linear-gradient(
+    0deg,
+    var(--secondary-color) 0%,
+    var(--auxiliary-color) 100%
+  );
+  border: 1px solid var(--secondary-color);
+  box-shadow: 0 0 50px 5px var(--secondary-color);
+}
+
+.login-container.transition {
+  animation: slide-down 0.5s ease-out forwards;
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
+  20% {
+    transform: translateX(-200px);
+  }
+
+  100% {
+    transform: translateX(100vw);
+    opacity: 0;
+  }
+}
+
+.login-title {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+  margin: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+}
+
+.username-container,
+.password-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 90%;
+}
+
+.user-icon,
+.password-icon {
+  stroke: var(--primary-color);
+  margin-right: 1rem;
+}
+
+.username-ipt,
+.password-ipt {
+  font-family: inherit;
+  border-radius: 5px;
+  border: none;
+  height: 2.25rem;
+  font-size: 1rem;
+  padding: 0.75rem;
+  background-color: var(--auxiliary-color);
+  caret-color: var(--secondary-background-color);
+  color: var(--primary-color);
+  font-weight: 400;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.username-ipt:focus,
+.password-ipt:focus {
+  outline: none;
+  border-bottom: 1px solid var(--secondary-background-color);
+}
+
+.error-msg {
+  font-weight: 200;
+  font-size: 0.75rem;
+  height: 19px;
+}
+
+.submit-btn {
+  height: 50px;
+  font-family: inherit;
+  font-size: 1.25rem;
+  border-radius: 10px;
+  width: 75%;
+  font-weight: 500;
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+
+.submit-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+.submit-btn:disabled,
+.submit-btn:disabled:hover {
+  color: var(--secondary-background-color);
+  border: 1px solid var(--secondary-background-color);
+  background-color: transparent;
+  cursor: auto;
+}

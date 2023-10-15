@@ -5,7 +5,7 @@ import { tttTurnIconStr } from "../../constants/svgImgs";
 
 const TikTakToe = () => {
   const [isStarted, setIsStarted] = useState(false);
-  const [turn, setTurn] = useState("X");
+  const [turn, setTurn] = useState("");
   const [winner, setWinner] = useState(null);
   const [board, setBoard] = useState([
     [null, null, null],
@@ -17,7 +17,7 @@ const TikTakToe = () => {
     setIsStarted(!isStarted);
   };
 
-  const handleCellElection  = (e) => {
+  const handleCellElection = (e) => {
     const cellNumber = e.target.classList[1]
       .split("-")[1]
       .split("")
@@ -33,7 +33,7 @@ const TikTakToe = () => {
       );
       cellElement.innerHTML += tttTurnIconStr(turn);
     }
-  }
+  };
 
   useEffect(() => {
     setBoard([
@@ -42,6 +42,7 @@ const TikTakToe = () => {
       [null, null, null],
     ]);
     setWinner(null);
+    if (!isStarted) setTurn(parseInt(Math.random() * 2) === 0 ? "X" : "O");
   }, [isStarted]);
 
   useEffect(() => {
@@ -159,7 +160,9 @@ const TikTakToe = () => {
             }
           </div>
         ) : (
-          <p className="ttt-outcome-message">IT'S A TIE!</p>
+          <div className="ttt-outcome-message-container">
+            <p className="ttt-outcome-message">IT'S A TIE!</p>
+          </div>
         )
       ) : isStarted ? (
         <div className="turn-message-container">

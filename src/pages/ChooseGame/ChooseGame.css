@@ -1,3 +1,35 @@
+.welcome-msg-container {
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fade-in 0.3s cubic-bezier(0.42, 0, 0, 1.65) 1s both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    opacity: 100%;
+    scale: 100%;
+  }
+}
+
+.welcome-msg-1 {
+  color: var(--secondary-color);
+  font-size: 4rem;
+  font-weight: 200;
+  filter: drop-shadow(0 0 10px var(--secondary-color));
+}
+
+.welcome-msg-2 {
+  font-size: 2rem;
+  font-weight: 200;
+  color: var(--secondary-background-color);
+}
+
 .games-container {
   width: fit-content;
   height: fit-content;
@@ -15,13 +47,36 @@
   gap: 2rem;
   border-radius: 1rem;
   transition: all 0.2s ease-out;
-  background-color: var(--secondary-color);
-  box-shadow: -5px 5px 0 var(--secondary-background-color);
+  background: linear-gradient(
+    0deg,
+    var(--auxiliary-color) 0%,
+    var(--secondary-color) 100%
+  );
+  border: 1px solid var(--secondary-color);
+  animation: slide-in 1s ease-out backwards;
+}
+
+.game-link:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.game-link:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(100vw);
+  }
+  30% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .game-link:hover {
-  transform: translate(-5px, 5px);
-  box-shadow: 0 0 0 var(--secondary-background-color);
+  transform: translateY(5px);
 }
 
 .game-title {
@@ -58,10 +113,10 @@
   stroke-opacity: 0;
 }
 
+.x-figure:nth-child(5),
+.x-figure:nth-child(6),
 .x-figure:nth-child(7),
-.x-figure:nth-child(8),
-.x-figure:nth-child(9),
-.x-figure:nth-child(10) {
+.x-figure:nth-child(8) {
   stroke-opacity: 1;
 }
 
@@ -130,9 +185,51 @@
   font-weight: 200;
   fill: var(--primary-color);
   opacity: 0;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
-.game-link:hover .sudoku-numbers{
+.game-link:hover .sudoku-numbers {
   opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .welcome-msg-1 {
+    font-size: 3rem;
+  }
+  
+  .welcome-msg-2 {
+    font-size: 1.5rem;
+  }
+
+  .games-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .game-link {
+    height: 300px;
+    width: 60%;
+    min-width: 300px;
+    max-width: 500px;
+  }
+
+  .game-icon {
+    width: 160px;
+    height: 160px;
+  }
+
+  .x-figure,
+  .o-figure {
+    stroke-opacity: 1;
+  }
+
+  .hangman-stickman {
+    stroke-opacity: 1;
+  }
+
+  .sudoku-numbers {
+    opacity: 1;
+  }
 }

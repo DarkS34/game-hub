@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import StartGameButton from "../../components/StartGameButton/StartGameButton";
 import "./TicTacToe.css";
-import { tttTurnIconStr } from "../../constants/svgImgs";
+import TicTacToeFigure from "../../components/TicTacToeFigure";
 
 const TikTakToe = () => {
   const [isStarted, setIsStarted] = useState(false);
@@ -15,6 +15,17 @@ const TikTakToe = () => {
 
   const handleStartClick = () => {
     setIsStarted(!isStarted);
+  };
+
+  const tttTurnIconStr = (turn) => {
+    return `<svg class="ttt-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+                  ${
+                    turn === "X"
+                      ? ` <line class="X-line" x1="110" y1="10" x2="10" y2="110" />
+                          <line class="X-line" x1="10" y1="10" x2="110" y2="110" />`
+                      : `<circle class="O-circle" cx="60" cy="60" r="50"/>`
+                  }
+              </svg>`;
   };
 
   const handleCellElection = (e) => {
@@ -130,65 +141,23 @@ const TikTakToe = () => {
         winner !== "tie" ? (
           <div className="ttt-outcome-message-container">
             <p className="ttt-outcome-message">WINNER IS</p>
-            {
-              <svg
-                className="ttt-outcome-message-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 120 120"
-              >
-                {winner === "X" ? (
-                  <>
-                    <line
-                      className="X-line"
-                      x1="110"
-                      y1="10"
-                      x2="10"
-                      y2="110"
-                    />
-                    <line
-                      className="X-line"
-                      x1="10"
-                      y1="10"
-                      x2="110"
-                      y2="110"
-                    />
-                  </>
-                ) : (
-                  <circle className="O-circle" cx="60" cy="60" r="50" />
-                )}
-              </svg>
-            }
+            <TicTacToeFigure cName="ttt-outcome-message-icon" fig={winner}/>
           </div>
         ) : (
           <div className="ttt-outcome-message-container">
             <p className="ttt-outcome-message">IT'S A TIE!</p>
           </div>
         )
-      ) : isStarted ? (
-        <div className="turn-message-container">
-          <p className="turn-message">TURN OF</p>
-          {
-            <svg
-              className="turn-message-icon"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 120 120"
-            >
-              {turn === "X" ? (
-                <>
-                  <line className="X-line" x1="110" y1="10" x2="10" y2="110" />
-                  <line className="X-line" x1="10" y1="10" x2="110" y2="110" />
-                </>
-              ) : (
-                <circle className="O-circle" cx="60" cy="60" r="50" />
-              )}
-            </svg>
-          }
+        ) : isStarted ? (
+          <div className="ttt-turn-message-container">
+          <p className="ttt-turn-message">TURN OF</p>
+          <TicTacToeFigure cName="ttt-turn-message-icon" fig={turn}/>
         </div>
       ) : (
         <p className="ttt-start-message">PRESS PLAY TO START!</p>
       )}
       {isStarted ? (
-        <div className="ttt-game-container enabled">
+        <div className="ttt-game-container">
           {board.map((row, i) =>
             row.map((cell, j) => (
               <button
@@ -201,7 +170,7 @@ const TikTakToe = () => {
           )}
         </div>
       ) : (
-        <div className="ttt-game-container disabled"></div>
+        <div className="ttt-game-container empty"></div>
       )}
     </div>
   );

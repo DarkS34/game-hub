@@ -1,7 +1,7 @@
 import { createContext, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocalStorage } from "../hooks/useLocalStorage";
-import { isAuthenticated } from "../components/AuthService";
+import { isAuthenticated } from "../security/AuthService";
 
 export const AuthContext = createContext();
 

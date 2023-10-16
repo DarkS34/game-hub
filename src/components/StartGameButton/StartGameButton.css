@@ -73,3 +73,21 @@
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
 }
+
+@media screen and (max-width: 1024px) {
+  .start-button:hover{
+    background: var(--primary-background-color);
+    box-shadow: none;
+  }
+
+  .start-button:hover::before {
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none;
+  }
+
+  .start-button:active{
+    background: var(--secondary-color);
+    box-shadow: none;    
+  }
+}

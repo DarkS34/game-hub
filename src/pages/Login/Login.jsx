@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 
 import "./Login.css";
-import { isAuthenticated } from "../../components/AuthService";
+import { isAuthenticated } from "../../security/AuthService";
 
 const Login = () => {
   const { login } = useAuth();

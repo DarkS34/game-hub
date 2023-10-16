@@ -5,8 +5,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .ttt-title {
@@ -16,21 +15,22 @@
 }
 
 .ttt-game-container {
-  width: 510px;
-  height: 510px;
+  max-width: 510px;
+  max-height: 510px;
+  min-width: 300px;
+  min-height: 300px;
+  height: 45vh;
+  width: 45vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  transition: all 0.2s ease-out;
-}
-
-.ttt-game-container.enabled {
   border: 1px solid var(--secondary-background-color);
   background-color: var(--secondary-background-color);
 }
 
-.ttt-game-container.disabled {
+.ttt-game-container.empty {
   border: 1px solid var(--secondary-background-color);
+  background-color: var(--primary-background-color);
 }
 
 .board-cell {
@@ -128,7 +128,7 @@
   margin-block: 7px;
 }
 
-.turn-message-container,
+.ttt-turn-message-container,
 .ttt-outcome-message-container {
   display: flex;
   height: 50px;
@@ -136,7 +136,7 @@
 }
 
 .ttt-start-message,
-.turn-message {
+.ttt-turn-message {
   font-size: 1.5rem;
   letter-spacing: 0.25rem;
 }
@@ -146,7 +146,7 @@
   letter-spacing: 0.25rem;
 }
 
-.turn-message-icon {
+.ttt-turn-message-icon {
   width: 32px;
   margin-left: 0.75rem;
 }
@@ -154,4 +154,35 @@
 .ttt-outcome-message-icon {
   width: 48px;
   margin-left: 1rem;
+}
+
+@media screen and (max-width: 425px) {
+  .ttt-title {
+    font-size: 2.25rem;
+  }
+  .ttt-game-container {
+    width: 90vw;
+    height: 90vw;
+  }
+
+  .ttt-turn-message-container,
+  .ttt-outcome-message-container {
+    height: 36px;
+  }
+
+  .ttt-start-message {
+    margin-block: 6px;
+  }
+  .ttt-start-message,
+  .ttt-turn-message {
+    font-size: 16px;
+  }
+
+  .ttt-outcome-message {
+    font-size: 24px;
+  }
+
+  .ttt-outcome-message-icon {
+    width: 36px;
+  }
 }

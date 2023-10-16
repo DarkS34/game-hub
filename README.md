@@ -1,2 +1,2 @@
-Login: test
+Login: test \n
 Password: 123

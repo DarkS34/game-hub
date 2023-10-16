@@ -195,6 +195,10 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .welcome-msg-container{
+    animation-delay: .3s;
+  }
+
   .welcome-msg-1 {
     font-size: 3rem;
   }
